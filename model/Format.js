@@ -3,7 +3,8 @@
 var SHOW_MODES = ["both", "cpu", "memory"]
 
 function percent(value) {
-  return value === null || value === undefined ? "--" : Math.round(value) + "%"
+  if (value === null || value === undefined) return "--"
+  return String(Math.round(value)).padStart(3, "0") + "%"
 }
 
 function gigabytes(kb) {

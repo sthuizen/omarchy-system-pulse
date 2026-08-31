@@ -1,8 +1,10 @@
 const { load, test, eq } = require("../harness.js")
 const Format = load("Format.js")
 
-test("percent drops the decimal the bar has no room for", () => {
-  eq(Format.percent(34.4), "34%")
+test("percent drops the decimal and reserves three digits for the bar", () => {
+  eq(Format.percent(5), "005%")
+  eq(Format.percent(34.4), "034%")
+  eq(Format.percent(99), "099%")
   eq(Format.percent(99.6), "100%")
 })
 
@@ -21,7 +23,7 @@ test("gigabytes is empty rather than wrong when there is no reading", () => {
 
 test("tooltip spells out what the bar abbreviates", () => {
   eq(Format.tooltip(34.4, { usedKb: 8998204, totalKb: 31965652 }),
-     "CPU 34%  ·  MEM 8.6G / 30.5G")
+     "CPU 034%  ·  MEM 8.6G / 30.5G")
 })
 
 test("tooltip degrades to the half it has", () => {

@@ -26,6 +26,7 @@ Panel {
   readonly property color foreground: bar ? bar.foreground : Color.foreground
   readonly property color urgentColor: bar ? bar.urgent : Color.urgent
   readonly property string fontFamily: bar ? bar.fontFamily : Style.font.family
+  readonly property string readingFontFamily: "JetBrainsMono Nerd Font"
 
   readonly property bool cpuUrgent: monitor.cpuPercent !== null && monitor.cpuPercent >= urgentThreshold
   readonly property bool memoryUrgent: monitor.memPercent !== null && monitor.memPercent >= urgentThreshold
@@ -73,6 +74,7 @@ Panel {
     WidgetButton {
       bar: root.bar
       visible: root.showCpu
+      fontFamily: root.readingFontFamily
       horizontalMargin: 4.5
       text: root.vertical ? "󰻠" : "󰻠 " + Format.percent(monitor.cpuPercent)
       active: root.cpuUrgent
@@ -86,6 +88,7 @@ Panel {
     WidgetButton {
       bar: root.bar
       visible: root.showMemory
+      fontFamily: root.readingFontFamily
       horizontalMargin: 4.5
       text: root.vertical ? "󰍛" : "󰍛 " + Format.percent(monitor.memPercent)
       active: root.memoryUrgent
