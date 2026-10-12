@@ -38,7 +38,7 @@ matching both PID and Linux process start time between samples.
 ## Install
 
 ```bash
-omarchy plugin add https://github.com/thenailedone/omarchy-system-pulse.git --enable
+omarchy plugin add https://github.com/sthuizen/omarchy-system-pulse.git --enable
 ```
 
 ## Usage

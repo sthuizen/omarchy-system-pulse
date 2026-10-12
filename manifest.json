@@ -3,7 +3,7 @@
   "id": "io.github.thenailedone.system-pulse",
   "name": "System Pulse",
   "version": "1.0.0",
-  "author": "Fernando Menolli; maintained fork by thenailedone",
+  "author": "Fernando Menolli; maintained fork by sthuizen",
   "license": "MIT",
   "description": "Auditable CPU and memory meters with PID-safe process accounting and htop one click away.",
   "kinds": [
